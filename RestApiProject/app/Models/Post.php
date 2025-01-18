@@ -16,6 +16,11 @@ class Post extends Model
         // Add other fields as needed (e.g., 'published_at', 'slug')
     ];
 
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     protected $dates = [
         'created_at',
         'updated_at',

@@ -86,3 +86,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     // Command: php artisan breeze:install api
     // Command: npm install && npm run dev (optional for frontend scaffolding)
     // Command: php artisan migrate
+
+/\*\*
+
+-   Step 2: User Authentication with Laravel Breeze
+    \*/
+    // Breeze provides API endpoints for registration, login, logout, and password reset.
+    // Review routes/api.php to confirm available routes for authentication.
+
+/\*\*
+
+-   Step 3: Post Model and Migration
+    \*/
+    // Command: php artisan make:model Post -m
+    // Command: php artisan make:factory PostFactory
+    // Command: php artisan make:seed PostSeeder
+    // Command: php artisan make:seed UsersSeeder
+    // Command: php artisan make:migration create_personal_access_tokens_table

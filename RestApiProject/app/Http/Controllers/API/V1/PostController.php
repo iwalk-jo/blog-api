@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
-use App\Http\Resources\v1\PostCollection;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\PostResource;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        // return response()->json(Post::all(), 200);
-        return new PostCollection(Post::all());
+        $posts = Post::with('author')->get();
+        return PostResource::collection($posts);
     }
 
     /**
@@ -30,25 +31,22 @@ class PostController extends Controller
 
         $post = Auth::user()->posts()->create($validated);
 
-        return response()->json($post, 201);
+        return new PostResource($post);
     }
 
     /**
      * Display a specific post.
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
-        return response()->json($post, 200);
+        return new PostResource($post->load('author'));
     }
 
     /**
      * Update a post.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        $post = Post::findOrFail($id);
-
         if (Auth::id() !== $post->user_id) {
             return response()->json(['error' => 'Unauthorized'], 403);
         }
@@ -60,16 +58,14 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return response()->json($post, 200);
+        return new PostResource($post);
     }
 
     /**
      * Delete a post.
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $post = Post::findOrFail($id);
-
         if (Auth::id() !== $post->user_id) {
             return response()->json(['error' => 'Unauthorized'], 403);
         }
