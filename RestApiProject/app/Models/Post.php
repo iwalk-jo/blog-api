@@ -13,12 +13,11 @@ class Post extends Model
         'title',
         'body',
         'user_id',
-        // Add other fields as needed (e.g., 'published_at', 'slug')
     ];
 
     public function author()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     protected $dates = [
