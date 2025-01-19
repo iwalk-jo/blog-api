@@ -13,6 +13,6 @@ class PostsSeeder extends Seeder
      */
     public function run(): void
     {
-        Post::factory(10)->create(['user_id' => 1]); // Seed 10 posts
+        Post::factory(5)->create(['user_id' => 1]); // Seed 10 posts
     }
 }

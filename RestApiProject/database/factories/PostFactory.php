@@ -15,12 +15,23 @@ class PostFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+
+    public function definition()
     {
+        $title = $this->faker->sentence();
         return [
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
-            'user_id' => User::factory(),
+            'user_id' => $attribute['user_id'] ?? User::factory(),
         ];
+
     }
+    // public function definition(): array
+    // {
+    //     return [
+    //         'title' => $this->faker->sentence,
+    //         'content' => $this->faker->paragraph,
+    //         'user_id' => User::factory(),
+    //     ];
+    // }
 }

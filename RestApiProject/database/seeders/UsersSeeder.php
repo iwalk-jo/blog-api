@@ -20,10 +20,12 @@ class UsersSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
-        // $user->createToken('AdminUser')->plainTextToken;
+        $user->createToken('AdminUser')->plainTextToken;
 
-        User::factory(5)->create()->each(function ($user) {
-            Post::factory(5)->create(['user_id' => $user->id]); // Create 5 posts per user
-        });
+        User::factory()->count(5)->create();
+
+        // User::factory(5)->create()->each(function ($user) {
+        //     Post::factory(5)->create(['user_id' => $user->id]); // Create 5 posts per user
+        // });
     }
 }

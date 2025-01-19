@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\API\V1\AuthorController;
 use App\Http\Controllers\API\V1\PostController;
+use App\Http\Controllers\API\V1\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Resources\V1\PostCollection;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,28 +18,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public routes (no authentication required)
+Route::group(['prefix' => 'v1'], function () {
+    // User registration
+    Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+
+    // User login
+    Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
+});
+
+// Protected routes (requires authentication)
 Route::group(
     [
         'prefix' => 'v1',
-        'middleware' => 'auth:sanctum'
+        'middleware' => 'auth:sanctum',
     ],
     function () {
-        // Posts
-        // Route::apiResource('/posts', PostCollection::class); 
+        // Post CRUD operations
         Route::apiResource('/posts', PostController::class);
 
-        // Authors
+        // Get the authenticated user's details
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        })->name('user.profile');
+
+        // Author-related routes
         Route::get('/authors/{user}', [AuthorController::class, 'show'])->name('authors.show');
-        Route::get('/authors/{user}/posts', [AuthorController::class, 'posts']);
+        Route::get('/authors/{user}/posts', [AuthorController::class, 'posts'])->name('authors.posts');
 
-        Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-            ->middleware('guest')
-            ->name('login');
-
+        // Logout route
+        Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
     }
-
 );
-
-// Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-//     return $request->user();
-// });
