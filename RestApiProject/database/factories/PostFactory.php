@@ -26,12 +26,5 @@ class PostFactory extends Factory
         ];
 
     }
-    // public function definition(): array
-    // {
-    //     return [
-    //         'title' => $this->faker->sentence,
-    //         'content' => $this->faker->paragraph,
-    //         'user_id' => User::factory(),
-    //     ];
-    // }
+
 }

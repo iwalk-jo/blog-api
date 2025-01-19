@@ -14,17 +14,11 @@ class PostCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        // return $this->collection->map(function ($post) {
-        //     return new PostResource($post);
-        // })->toArray();
 
         return $this->collection->map(function ($post) {
             return new PostResource($post);
         })->toArray();
 
-        // return [
-        //     'data' => PostResource::collection($this->collection),
-        // ];
     }
 
     /**
