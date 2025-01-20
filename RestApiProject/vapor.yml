@@ -18,5 +18,4 @@ ignore:
   - "node_modules"
   - "tests"
   - "storage/*.key"
-  - "storage/debugbar/*"
   - "*.log"
