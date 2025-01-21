@@ -1,0 +1,202 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "RestApiProject Production",
+    "collectionId": "946e3015-25e7-4649-8526-5536440b3c22",
+    "dateExported": "2025-01-21T23:52:49.918Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "90c20adf-4b24-4c0e-a602-c0fe984775f4",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Login",
+            "url": "/api/v1/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-01-20T09:15:04.027Z",
+            "modified": "2025-01-21T23:02:44.607Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "admin@example.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "8af0b324-3dce-4cc2-a6a4-35e9cbd6d4c9",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Register",
+            "url": "/api/v1/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-01-21T23:21:13.274Z",
+            "modified": "2025-01-21T23:22:22.429Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "bb38e5f0-9394-46ab-9ff3-6352bccf4022",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Create Post",
+            "url": "/api/v1/posts",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-01-21T23:22:49.882Z",
+            "modified": "2025-01-21T23:37:36.019Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Test Blog two"
+                    },
+                    {
+                        "name": "content",
+                        "value": "Test Blog two"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62"
+            }
+        },
+        {
+            "_id": "bd8d5f2e-5d05-4717-9a8f-1c6d21620bb3",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Get All Posts",
+            "url": "/api/v1/posts",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-01-21T23:38:25.008Z",
+            "modified": "2025-01-21T23:39:55.506Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62"
+            }
+        },
+        {
+            "_id": "1ce886c1-1783-488e-a8bd-6c4a620b45bd",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Get Single Post",
+            "url": "/api/v1/posts/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-01-21T23:40:49.881Z",
+            "modified": "2025-01-21T23:41:42.077Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62"
+            }
+        },
+        {
+            "_id": "0e259644-6af7-45ee-a747-f4f50344c04a",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Update Posts",
+            "url": "/api/v1/posts/1",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2025-01-21T23:41:58.233Z",
+            "modified": "2025-01-21T23:46:47.671Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Testing three update"
+                    },
+                    {
+                        "name": "content",
+                        "value": "Testing three Update"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62"
+            }
+        },
+        {
+            "_id": "8fb004fd-77c2-4864-87dd-ac2b63f7d915",
+            "colId": "946e3015-25e7-4649-8526-5536440b3c22",
+            "containerId": "",
+            "name": "Delete Post",
+            "url": "/api/v1/posts/2",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2025-01-21T23:47:29.532Z",
+            "modified": "2025-01-21T23:49:01.465Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62"
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "https://cryptic-dusk-91533-28edba1fd54f.herokuapp.com"
+        }
+    },
+    "ref": "FCbt6xaxi6hG4zuixQf_54YZnRxo0tQjwwza7GKdHaTsBCAlo8Rjatc1OjReVi3u1qym4vIkLMC_uOqZul2B7A"
+}
