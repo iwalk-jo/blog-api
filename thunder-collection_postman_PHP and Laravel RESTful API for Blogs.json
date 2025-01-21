@@ -1,0 +1,249 @@
+{
+    "info": {
+        "_postman_id": "330823d0-dd1c-476f-98be-bcd6a617c79a",
+        "name": "PHP and Laravel RESTful API for Blogs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Get All Posts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "/posts",
+                    "host": [
+                        "posts"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|ar47yKfiHVW3qy0PJVNODAkySRTR6OZibjNyTOkF0f826cc4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Single Post",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "/posts/1",
+                    "path": [
+                        "1"
+                    ],
+                    "host": [
+                        "posts"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|ar47yKfiHVW3qy0PJVNODAkySRTR6OZibjNyTOkF0f826cc4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Post",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/posts",
+                    "host": [
+                        "posts"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "title",
+                            "value": "Blog Post Title 2",
+                            "type": "default"
+                        },
+                        {
+                            "key": "content",
+                            "value": "Test blog content 2",
+                            "type": "default"
+                        }
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|ar47yKfiHVW3qy0PJVNODAkySRTR6OZibjNyTOkF0f826cc4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Post",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "/posts/4",
+                    "path": [
+                        "4"
+                    ],
+                    "host": [
+                        "posts"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "title",
+                            "value": "testing title",
+                            "type": "default"
+                        },
+                        {
+                            "key": "content",
+                            "value": "updated content",
+                            "type": "default"
+                        }
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|ar47yKfiHVW3qy0PJVNODAkySRTR6OZibjNyTOkF0f826cc4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Post",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "/posts/4",
+                    "path": [
+                        "4"
+                    ],
+                    "host": [
+                        "posts"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|ar47yKfiHVW3qy0PJVNODAkySRTR6OZibjNyTOkF0f826cc4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Login ",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/login",
+                    "host": [
+                        "login"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "email",
+                            "value": "admin@example.com",
+                            "type": "default"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password",
+                            "type": "default"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/register",
+                    "host": [
+                        "register"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}"
+                }
+            }
+        }
+    ]
+}
