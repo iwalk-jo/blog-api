@@ -1,0 +1,271 @@
+{
+    "info": {
+        "_postman_id": "47458292-ab46-47c4-bc37-d9a85fcba6d8",
+        "name": "RestApiProject Production",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/api/v1/login",
+                    "path": [
+                        "v1",
+                        "login"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "email",
+                            "value": "admin@example.com",
+                            "type": "default"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password",
+                            "type": "default"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/api/v1/register",
+                    "path": [
+                        "v1",
+                        "register"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Create Post",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "/api/v1/posts",
+                    "path": [
+                        "v1",
+                        "posts"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "title",
+                            "value": "Test Blog two",
+                            "type": "default"
+                        },
+                        {
+                            "key": "content",
+                            "value": "Test Blog two",
+                            "type": "default"
+                        }
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Posts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "/api/v1/posts",
+                    "path": [
+                        "v1",
+                        "posts"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Single Post",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "/api/v1/posts/1",
+                    "path": [
+                        "v1",
+                        "posts",
+                        "1"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Posts",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "/api/v1/posts/1",
+                    "path": [
+                        "v1",
+                        "posts",
+                        "1"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "title",
+                            "value": "Testing three update",
+                            "type": "default"
+                        },
+                        {
+                            "key": "content",
+                            "value": "Testing three Update",
+                            "type": "default"
+                        }
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Post",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "/api/v1/posts/2",
+                    "path": [
+                        "v1",
+                        "posts",
+                        "2"
+                    ],
+                    "host": [
+                        "api"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|4rQ9Z7M18lhGw7gsqFp1X7hCzuHVi5uZPm5dpJb3150e8a62",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
